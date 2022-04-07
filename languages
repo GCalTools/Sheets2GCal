@@ -227,7 +227,16 @@ var htmlStrings = {
         "linksheettext" : "Inserisci l'ID dalle impostazioni di Google Calendar. Il collegamento tramite ID non cambierà il foglio, solo il calendario di Google collegato a questo foglio",
         "linked" : "Collegato!",
         "wrongaccount" : "Per favore disconnettiti da",
-        "accesswith" : "per accedere al documento come"
+        "accesswith" : "per accedere al documento come",
+        "triggertext": "Esegui approssimativamente a quest'ora del giorno. Usa 0 per mezzanotte, 12 per mezzogiorno",
+        "deletetext": "Interrompi tutte le importazioni",
+        "startbutton": "Start",
+        "stopbutton": "Stop",
+        "fulltriggertext": "Imposta un'importazione giornaliera delle modifiche in Google Calendar. Per risultati ottimali, scegli un'ora del giorno in cui nessuno utilizzerà il foglio o i dati potrebbero andare persi. Tutti i fogli in questo foglio di lavoro verranno eseguiti contemporaneamente, e non esattamente in quel momento.",
+        "notrigger": "Al momento non stai importando automaticamente le modifiche al calendario per questo foglio",
+        "yestrigger": "Attualmente stai importando automaticamente le modifiche al calendario per questo foglio",
+        "autoimport": "Importa automaticamente",
+        "resetstatus": "Ripristina i colori di stato"
     }
 };
 var scriptStrings = {
