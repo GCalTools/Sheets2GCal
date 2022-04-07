@@ -4,6 +4,8 @@ var colorsNames = {
     ar : ['تقصير', 'لافندر', 'المريمية', 'عنب', 'فلامنغو', 'موز', 'يوسفي', 'الطاووس الأزرق', 'الجرافيت', 'توت', 'ريحان', 'طماطم'],
     it : ['Default', 'Lavender', 'Sage', 'Grape', 'Flamingo', 'Banana', 'Tangerine', 'Peacock', 'Graphite', 'Blueberry', 'Basil', 'Tomato']
 };
+var oriColorsHtml = ['', '#7986cb', '#33b679', '#8e24aa', '#e67c73', '#f6c026', '#f5511d', '#039be5', '#616161', '#3f51b5', '#0b8043', '#d60000'];
+var colorsHtml = ['', '#b6c9ff', '#4dffb6', '#d536ff', '#ffbaad', '#ffff39', '#ff7a2c', '#05e9ff', '#929292', '#5f7aff', '#11c065', '#ff0000'];
 var headerNames = {
     en : ["Delete", "Update", "Title", "Start", "End", "Start Time", "End Time", "Repeat", "Interval", "Count", "Until", "By Day", "Description", "Location", "Timezone", "Guests", "Event ID", "Link", "Meet", "Color"],
     fr: ["Supprimer", "Mettre à jour", "Titre", "Début", "Fin", "Heure de début", "Heure de fin", "Répéter", "Intervalle", "Nombre", "Jusqu'à", "ByDay" , "Description", "Lieu", "Fuseau horaire", "Invités", "ID", "Lien", "Meet", "Couleur"],
@@ -22,6 +24,7 @@ var colColName = {
     ar: 'اللون',
     it: 'Colore'
 };
+
 var htmlStrings = {
     en: {
         "language": "en",
@@ -40,6 +43,10 @@ var htmlStrings = {
         "notsheets2gcal" : "This is not a Sheets2Gcal Pro Sheet\nPlease either Import a calendar or click Link Sheet",
         "error" : "Error",
         "verify" : "Please select 'Delete' or 'Update' for some events, and verify your data is valid",
+        "createdsingle": "event created",
+        "updatedsingle": "event updated",
+        "deletedsingle": "event deleted",
+        "importedsingle": "event imported",
         "created" : "events created",
         "updated" : "events updated",
         "deleted" : "events deleted",
@@ -80,6 +87,10 @@ var htmlStrings = {
         "notsheets2gcal" : "Ceci n'est pas un Sheet Sheets2GCal\nVeuillez Importer un Agenda ou Connecter ce Sheet",
         "error" : "Erreur",
         "verify" : "Veuillez choisir de 'Supprimer' ou 'Mettre à jour' des évènements, et vérifier que les valeurs sont corrects",
+        "createdsingle": "évènement créé",
+        "updatedsingle": "évènement mis à jour",
+        "deletedsingle": "évènement supprimé",
+        "importedsingle": "évènement importé",
         "created" : "évènements créés",
         "updated" : "évènements mis à jour",
         "deleted" : "évènements supprimés",
@@ -120,6 +131,10 @@ var htmlStrings = {
         "notsheets2gcal" : "الرجاء ‘استيراد’ تقويم أواستخدم ‘أدوات’ للارتباط مع تقويم قوقل",
         "error" : "خطأ",
         "verify" : "فضلا اختر ‘حذف’ أو ‘تعديل’ لبعض المواعيد، وتأكد من صحة البيانات",
+        "createdsingle": "مواعيد تم إنشاؤها",
+        "updatedsingle": "مواعيد تم تعديلها",
+        "deletedsingle": "مواعيد تم إنشاؤها",
+        "importedsingle": "مواعيد تم إنشاؤها",
         "created" : "مواعيد تم إنشاؤها",
         "updated" : "مواعيد تم تعديلها",
         "deleted" : "مواعيد تم حذفها",
@@ -142,7 +157,7 @@ var htmlStrings = {
         "linked" : "مرتبط",
         "wrongaccount" : "الرجاء تسجيل الخروج من الحسابات الأخرى، والمحاولة مرة أخرى.",
         "accesswith" : "المستخدم"
-    }
+    },
     it: {
         "language": "it",
         "align" : "left",
@@ -191,6 +206,11 @@ var scriptStrings = {
         "MIlink" : "Link Sheet",
         "MIquickstart" : 'Quick Start',
         "MIaccount" : 'My Account',
+        "MItrigger": "Automatic Import",
+        "MIimportall": "Import All",
+        "MIquickimport": "Quick import",
+        "MIquickexport": "Quick update",
+        "MIquicksync": "Update -> Import",
         "error1" : "Sign up for a paid account at www.sheets2gcal.com \nto import updates from Google Calendar",
         "error2" : "Sign up for FREE at www.sheets2gcal.com using this Google Account\nto enable limited Google Calendar Import/Update instantly",
         "error3" : "Free members can import up to 5000 events per day.\nPlease subscribe at www.sheets2gcal.com for unlimited imports, or wait up to 24 hours",
@@ -224,6 +244,11 @@ var scriptStrings = {
         "MIlink" : "Connecter Sheet à l'Agenda",
         "MIquickstart" : 'Introduction',
         "MIaccount" : 'Mon Compte',
+        "MIquickimport": "Importation rapide",
+        "MIquickexport": "Exportation rapide",
+        "MItrigger": "Importer Automatiquement",
+        "MIimportall": "Importer tout",
+        "MIquicksync": "Exporter -> Importer",
         "error1" : "Prenez un abonnement payant à www.sheets2gcal.com \npour pouvoir importer les modification effectuées dans Google Calendar dans ce Sheet",
         "error2" : "Abonnez-vous gratuitement sur www.sheets2gcal.com avec ce même compte Google\nafin d'activer l'importation des Google Agendas tout de suite",
         "error3" : "Les abonnées gratuit peuvent importer jusqu'à 5000 events par jour.\nVeuillez prendre un abonnement payant à www.sheets2gcal.com pour importer plus de 5000 évènements par jour, sinon attendre 24 heures",
@@ -257,6 +282,11 @@ var scriptStrings = {
         "MIlink" : "ربط الورقة",
         "MIquickstart" : 'البدء',
         "MIaccount" : 'حسابي',
+        "MItrigger": 'تشغيل تلقائيا',
+        "MIimportall": "استيراد كل تقويم",
+        "MIquickimport": "استيراد سريع",
+        "MIquickexport": "تصدير سريع",
+        "MIquicksync": "تحديث / استيراد",
         "error1" : "قم بتسجيل حساب مدفوع في الموقع www.sheets2gcal.com \n لاستيراد أي تحديثات من التقويم",
         "error2" : "قم بتسجيل حساب مجاني في الموقع www.sheets2gcal.com باستخدام حسابك في قوقل\n لتقعيل مزامنة فورية ولكن محدودة مع التقويم",
         "error3" : "يمكن للعضوية المجانية استيراد 5000 موعد يوميا.\n الرجال الحصول على عضوية مدفوعة في الموقع www.sheets2gcal.com لتتمكن من استيراد لا محدود أو الانتظار 24 ساعة",
@@ -290,6 +320,11 @@ var scriptStrings = {
         "MIlink" : "Link Sheet",
         "MIquickstart" : 'Quick Start',
         "MIaccount" : 'My Account',
+        "MItrigger": "Automatic Import",
+        "MIimportall": "Import All",
+        "MIquickimport": "Quick import",
+        "MIquickexport": "Quick update",
+        "MIquicksync": "Update -> Import",
         "error1" : "Sign up for a paid account at www.sheets2gcal.com \nto import updates from Google Calendar",
         "error2" : "Sign up for FREE at www.sheets2gcal.com using this Google Account\nto enable limited Google Calendar Import/Update instantly",
         "error3" : "Free members can import up to 5000 events per day.\nPlease subscribe at www.sheets2gcal.com for unlimited imports, or wait up to 24 hours",
