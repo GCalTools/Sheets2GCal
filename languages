@@ -2,25 +2,26 @@ var colorsNames = {
     en : ['Default', 'Lavender', 'Sage', 'Grape', 'Flamingo', 'Banana', 'Tangerine', 'Peacock', 'Graphite', 'Blueberry', 'Basil', 'Tomato'],
     fr : ['Par défaut', 'Lavande', 'Sauge', 'Raisin', 'Rose clair', 'Banane', 'Mandarine', 'Blue paon', 'Anthracite', 'Myrtille', 'Basilic', 'Tomate'],
     ar : ['تقصير', 'لافندر', 'المريمية', 'عنب', 'فلامنغو', 'موز', 'يوسفي', 'الطاووس الأزرق', 'الجرافيت', 'توت', 'ريحان', 'طماطم'],
-
+    it : ['Default', 'Lavender', 'Sage', 'Grape', 'Flamingo', 'Banana', 'Tangerine', 'Peacock', 'Graphite', 'Blueberry', 'Basil', 'Tomato']
 };
 var headerNames = {
     en : ["Delete", "Update", "Title", "Start", "End", "Start Time", "End Time", "Repeat", "Interval", "Count", "Until", "By Day", "Description", "Location", "Timezone", "Guests", "Event ID", "Link", "Meet", "Color"],
     fr: ["Supprimer", "Mettre à jour", "Titre", "Début", "Fin", "Heure de début", "Heure de fin", "Répéter", "Intervalle", "Nombre", "Jusqu'à", "ByDay" , "Description", "Lieu", "Fuseau horaire", "Invités", "ID", "Lien", "Meet", "Couleur"],
-    ar: ["حذف", "تحديث", "العنوان", "تاريخ البداية", "تاريخ النهاية", "من", "إلى", "تكرار", "المدة الزمنية", "العدد", "حتى", "باليوم", "الوصف", "الموقع", "النطاق الزمني", "المدعوين", "رقم الحدث/الموعد", "الرابط", "اللقاء", "اللون"]
+    ar: ["حذف", "تحديث", "العنوان", "تاريخ البداية", "تاريخ النهاية", "من", "إلى", "تكرار", "المدة الزمنية", "العدد", "حتى", "باليوم", "الوصف", "الموقع", "النطاق الزمني", "المدعوين", "رقم الحدث/الموعد", "الرابط", "اللقاء", "اللون"],
+    it : ["Elimina", "Aggiorna", "Titolo", "Inizio", "Fine", "Ora di inizio", "Ora di fine", "Ripetizione", "Intervallo", "Conteggio", "Fino a", "Per giorno", "Descrizione", "Luogo", "Fuso orario", "Ospiti", "ID evento", "Link", "Meet", "Colore"]
 };
 var repeatNames = {
     en: ['', 'daily', 'weekly', 'monthly', 'yearly'],
     fr: ['', 'jour', 'semaine', 'mois', 'année'],
-    ar: ['', 'اليومي', 'أسبوعي', 'شهريا', 'سنوي']
-
+    ar: ['', 'اليومي', 'أسبوعي', 'شهريا', 'سنوي'],
+    it: ['', 'daily', 'weekly', 'monthly', 'yearly']
 };
 var colColName = {
     en: 'Color',
     fr: 'Couleur',
-    ar: 'اللون'
+    ar: 'اللون',
+    it: 'Colore'
 };
-
 var htmlStrings = {
     en: {
         "language": "en",
@@ -142,6 +143,46 @@ var htmlStrings = {
         "wrongaccount" : "الرجاء تسجيل الخروج من الحسابات الأخرى، والمحاولة مرة أخرى.",
         "accesswith" : "المستخدم"
     }
+    it: {
+        "language": "it",
+        "align" : "left",
+        "direction" : "ltr",
+        "account" : "Account",
+        "calendar" : "Calendar",
+        "guestnotifications" : "Guest Notifications (optional)",
+        "sendemail" : "Send email for newly created events",
+        "sendemailupdated" : "Send email for updated/deleted",
+        "options"  : "Options",
+        "keeprow" : "Keep row data for deleted events",
+        "fetching" : "Fetching Data...",
+        "subscribe" : "Subscribe",
+        "update" : "Update",
+        "notsheets2gcal" : "This is not a Sheets2Gcal Pro Sheet\nPlease either Import a calendar or click Link Sheet",
+        "error" : "Error",
+        "verify" : "Please select 'Delete' or 'Update' for some events, and verify your data is valid",
+        "created" : "events created",
+        "updated" : "events updated",
+        "deleted" : "events deleted",
+        "imported" : "events imported",
+        "import": "Select a calendar to import to this Sheet",
+        "allevents" : "All events",
+        "startdate" : "Start Date",
+        "enddate" : "End Date",
+        "importcalendar" : "Clear Sheet & Import Calendar",
+        "importupdates" : "Import Updates & New Events",
+        "upgrade" : "Upgrade to any paid subscription to import updates and new events from Google Calendar without clearing the Sheet.",
+        "nocalendars" : "No Calendars Found",
+        "importrange" : "You cannot import updates for a range of dates",
+        "selectcalendar" : "Select a Calendar to Link",
+        "clearlink" : "Clear & Link Sheet",
+        "clearlinktext" : "This is the best way to set up a blank sheet for creating new events, without importing any existing calendar events. To edit or add to existing calendar events, please use 'Import Calendar to Sheet'.",
+        "keepdata" : "Keep data and link sheet",
+        "linksheet" :"Link Sheet",
+        "linksheettext" : "Enter the ID from the Google Calendar Settings. Linking by ID will not change the Sheet, only the Google Calendar linked with this Sheet",
+        "linked" : "Linked!",
+        "wrongaccount" : "Please log out from",
+        "accesswith" : "to access the document as"
+    }
 };
 var scriptStrings = {
     en: {
@@ -242,5 +283,38 @@ var scriptStrings = {
         "message6" : "خطأ",
         "message7" : "خطأ غير معروف",
         "message8" : 'الرجاء تحديد نطاق تاريخ صالح ، أو تمكين "كافة الأحداث"'
+    },
+    it: {
+        "MIimport": "Import Calendar to Sheet",
+        "MIexport": "Update Calendar from Sheet",
+        "MIlink" : "Link Sheet",
+        "MIquickstart" : 'Quick Start',
+        "MIaccount" : 'My Account',
+        "error1" : "Sign up for a paid account at www.sheets2gcal.com \nto import updates from Google Calendar",
+        "error2" : "Sign up for FREE at www.sheets2gcal.com using this Google Account\nto enable limited Google Calendar Import/Update instantly",
+        "error3" : "Free members can import up to 5000 events per day.\nPlease subscribe at www.sheets2gcal.com for unlimited imports, or wait up to 24 hours",
+        "error4" : 'Empty Sheet and link with Google Calendar?',
+        "error5" : 'Click YES to EMPTY the current sheet and link it to the selected Calendar. Click NO to CANCEL',
+        "error6" : 'Empty Sheet and Import Calendar Events?',
+        "error7" : 'Click YES to EMPTY the current sheet and IMPORT the selected Calendar, click NO to CANCEL',
+        "error8" : "This calendar is read-only and cannot be edited.\nPlease obtain read/write permissions for this calendar to continue",
+        "error9" : "Unregistered users can not update/delete unlimited events.\nSign up in 2 clicks at www.sheets2GCal.com with this Google Account to remove some limits for FREE!",
+        "error10" : 'The Color Column is missing',
+        "error11" : 'Sheets2GCal now supports event colors!\nWould you like to add a new COLOR column to start setting event colors?',
+        "error12" : "Multiple Google Accounts?",
+        "error12b" : "There was a problem accessing this document.\n\nAre you using multiple Google accounts in this browser?\nIf so, please disconnect from your other accounts and try again.",
+        "error13" : 'Unable to access the Sheet.',
+        "error14" : 'TimeZones Do Not Match',
+        "error15" : 'Google Calendar',
+        "error16" : 'and this SpreadSheet',
+        "error17" : 'use different TimeZones\nYou can change the Sheet TimeZone in "File" Menu > "SpreadSheet Settings" > "TimeZone".\nThis will cause problems: are you sure you want to continue and ignore this warning?',
+        "message1" : "There was a serious error importing the Calendar: ",
+        "message2" : "No Permission to delete",
+        "message3" : "Event Not Found",
+        "message4" : "Repeat Occurrences Can Not Repeat",
+        "message5" : "No Permission to edit",
+        "message6" : "Error",
+        "message7" : "Unknown Error",
+        "message8" : "Please Select a valid date range, or enable 'All Events'"
     }
 };
