@@ -1,34 +1,42 @@
-var languages = ['en', 'fr', 'ar', 'it', 'iw'];
+var languages = ['en', 'fr', 'ar', 'it', 'iw', 'ja'];
 
 var colorsNames = {
     en: ['Default', 'Lavender', 'Sage', 'Grape', 'Flamingo', 'Banana', 'Tangerine', 'Peacock', 'Graphite', 'Blueberry', 'Basil', 'Tomato'],
     fr: ['Par défaut', 'Lavande', 'Sauge', 'Raisin', 'Rose clair', 'Banane', 'Mandarine', 'Blue paon', 'Anthracite', 'Myrtille', 'Basilic', 'Tomate'],
     ar: ['تقصير', 'لافندر', 'المريمية', 'عنب', 'فلامنغو', 'موز', 'يوسفي', 'الطاووس الأزرق', 'الجرافيت', 'توت', 'ريحان', 'طماطم'],
     it: ['Predefinito', 'Lavanda', 'Salvia', 'Uva', 'Fenicottero', 'Banana', 'Mandarino', 'Pavone', 'Grafite', 'Mirtillo', 'Basilico', 'Pomodoro'],
-    iw: ['ברירת מחדל', 'לבנדר', 'מרווה', 'ענב', 'פלמינגו', 'בננה', 'מנדרינה', 'טווס', 'גרפיט', 'אוכמניה', 'ריחן', 'עגבניה']
+    iw: ['ברירת מחדל', 'לבנדר', 'מרווה', 'ענב', 'פלמינגו', 'בננה', 'מנדרינה', 'טווס', 'גרפיט', 'אוכמניה', 'ריחן', 'עגבניה'],
+    ja: ['デフォルト', 'ラベンダー', 'セージ', 'グレープ', 'フラミンゴ', 'バナナ', 'タンジェリン', 'ピーコック', 'グラファイト', 'ブルーベリー', 'バジル', 'トマト']
 };
+
 var oriColorsHtml = ['', '#7986cb', '#33b679', '#8e24aa', '#e67c73', '#f6c026', '#f5511d', '#039be5', '#616161', '#3f51b5', '#0b8043', '#d60000'];
 var colorsHtml = ['', '#b6c9ff', '#4dffb6', '#d536ff', '#ffbaad', '#ffff39', '#ff7a2c', '#05e9ff', '#929292', '#5f7aff', '#11c065', '#ff0000'];
+
 var headerNames = {
     en: ["Delete", "Update", "Title", "Start", "End", "Start Time", "End Time", "Repeat", "Interval", "Count", "Until", "By Day", "Description", "Location", "Timezone", "Guests", "Event ID", "Link", "Meet", "Color"],
     fr: ["Supprimer", "Mettre à jour", "Titre", "Début", "Fin", "Heure de début", "Heure de fin", "Répéter", "Intervalle", "Nombre", "Jusqu'à", "ByDay", "Description", "Lieu", "Fuseau horaire", "Invités", "ID", "Lien", "Meet", "Couleur"],
     ar: ["حذف", "تحديث", "العنوان", "تاريخ البداية", "تاريخ النهاية", "من", "إلى", "تكرار", "المدة الزمنية", "العدد", "حتى", "باليوم", "الوصف", "الموقع", "النطاق الزمني", "المدعوين", "رقم الحدث/الموعد", "الرابط", "اللقاء", "اللون"],
     it: ["Elimina", "Aggiorna", "Titolo", "Inizio", "Fine", "Ora di inizio", "Ora di fine", "Ripetizione", "Intervallo", "Conteggio", "Fino a", "Per giorno", "Descrizione", "Luogo", "Fuso orario", "Ospiti", "ID evento", "Link", "Meet", "Colore"],
-    iw: ["מחק", "עדכן", "שם", "התחלה", "סיום", "שעת התחלה", "שעת סיום", "חזרה", "הפסקה", "ספירה", "עד", "לפי יום", "תיאור", "מיקום", "אזור זמן", "מוזמנים", "זהות אירוע", "קישור", "Meet", "צבע"]
+    iw: ["מחק", "עדכן", "שם", "התחלה", "סיום", "שעת התחלה", "שעת סיום", "חזרה", "הפסקה", "ספירה", "עד", "לפי יום", "תיאור", "מיקום", "אזור זמן", "מוזמנים", "זהות אירוע", "קישור", "Meet", "צבע"],
+    ja: ["削除", "更新", "タイトル", "開始", "終了", "開始時刻", "終了時刻", "繰り返し", "間隔", "カウント", "まで", "曜日ごと", "説明", "場所", "タイムゾーン", "ゲスト", "イベントID", "リンク", "Meet", "カラー"]
 };
+
 var repeatNames = {
     en: ['', 'daily', 'weekly', 'monthly', 'yearly'],
     fr: ['', 'jour', 'semaine', 'mois', 'année'],
     ar: ['', 'اليومي', 'أسبوعي', 'شهريا', 'سنوي'],
     it: ['', 'giornaliero', 'settimanale', 'mensile', 'annuale'],
-    iw: ['', 'יומי', 'שבועי', 'חודשי', 'שנתי']
+    iw: ['', 'יומי', 'שבועי', 'חודשי', 'שנתי'],
+    ja: ['', '毎日', '毎週', '毎月', '毎年']
 };
+
 var colColName = {
     en: 'Color',
     fr: 'Couleur',
     ar: 'اللون',
     it: 'Colore',
-    iw: 'צֶבַע'
+    iw: 'צֶבַע',
+    ja: 'カラー'
 };
 
 var htmlStrings = {
@@ -193,9 +201,10 @@ var htmlStrings = {
         "keepdata": "الاحتفاظ بالبيانات والارتباط مع الورقة",
         "linksheet": "ارتباط مع الورقة",
         "linksheettext": "أدخل المعرف من إعدادات تقويم Google. لن يؤدي الربط حسب المعرف إلى تغيير الجدول ، فقط تقويم Google المرتبط بهذه الورقة",
-        "linked": "مرتبط",
         "resetlangtext": "قم بتكوين هذه الورقة لاستخدام لغة Google الافتراضية الخاصة بك",
         "resetlang": "تغيير اللغة",
+        "linked": "مرتبط",
+        "resetstatus": "إعادة تعيين ألوان الحالة",
         "wrongaccount": "الرجاء تسجيل الخروج من الحسابات الأخرى، والمحاولة مرة أخرى.",
         "accesswith": "المستخدم",
         "triggertext": "اركض في هذه الساعة من اليوم تقريبًا. استخدم 0 لمنتصف الليل و 12 ظهرًا",
@@ -330,8 +339,69 @@ var htmlStrings = {
         "importtext": "ייבוא",
         "exporttext": "ייצוא",
         "selectsyncmethod": "שיטת סנכרון"
+    },
+    ja: {
+        "language": "ja",
+        "align": "left",
+        "direction": "ltr",
+        "account": "アカウント",
+        "calendar": "カレンダー",
+        "guestnotifications": "ゲスト通知（オプション）",
+        "updatewarning": "'シート対カレンダーのチェック'を使用して更新するイベントを選択する場合、シートとカレンダーの違い、Googleカレンダーイベントに対して行われた編集を検出します。カレンダーの編集を上書きしないように注意し、必要に応じて最初に'更新のインポート'を行ってください。",
+        "sendemail": "新しく作成されたイベントにメールを送信",
+        "sendemailupdated": "更新/削除されたイベントにメールを送信",
+        "options": "オプション",
+        "keeprow": "削除されたイベントの行データを保持",
+        "fetching": "データを取得中...",
+        "subscribe": "購読",
+        "update": "更新",
+        "notsheets2gcal": "これはSheets2Gcal Proシートではありません\nカレンダーをインポートするか、シートをリンクしてください",
+        "error": "エラー",
+        "verify": "いくつかのイベントに対して'削除'または'更新'を選択し、データが有効であることを確認してください",
+        "createdsingle": "イベントが作成されました",
+        "updatedsingle": "イベントが更新されました",
+        "deletedsingle": "イベントが削除されました",
+        "importedsingle": "イベントがインポートされました",
+        "created": "イベントが作成されました",
+        "updated": "イベントが更新されました",
+        "deleted": "イベントが削除されました",
+        "imported": "イベントがインポートされました",
+        "import": "このシートにインポートするカレンダーを選択",
+        "allevents": "すべてのイベント",
+        "startdate": "開始日",
+        "enddate": "終了日",
+        "importcalendar": "シートをクリアしてカレンダーをインポート",
+        "importupdates": "更新と新しいイベントをインポート",
+        "upgrade": "シートをクリアせずにGoogleカレンダーから更新と新しいイベントをインポートするには、有料サブスクリプションにアップグレードしてください。",
+        "nocalendars": "カレンダーが見つかりません",
+        "importrange": "日付範囲の更新をインポートすることはできません",
+        "selectcalendar": "リンクするカレンダーを選択",
+        "clearlink": "シートをクリアしてリンク",
+        "clearlinktext": "カレンダーをインポートせずに新しいイベントのために空のシートを設定する最良の方法です。既存のイベントを編集または追加するには、'カレンダーをシートにインポート'を使用してください。",
+        "keepdata": "データを保持してシートをリンク",
+        "linksheet": "シートをリンク",
+        "linksheettext": "Googleカレンダー設定からIDを入力してください。IDでリンクしてもシートは変更されず、このシートにリンクされたGoogleカレンダーのみが変更されます",
+        "resetlangtext": "このシートをデフォルトのGoogle言語に設定",
+        "resetlang": "シートの言語を更新",
+        "linked": "リンクされました！",
+        "wrongaccount": "からログアウトしてください",
+        "accesswith": "としてドキュメントにアクセスするには",
+        "triggertext": "24時間制: 0は真夜中、12は正午",
+        "deletetext": "すべてのインポート/エクスポートを停止",
+        "startbutton": "開始",
+        "stopbutton": "停止",
+        "fulltriggertext": "シートとGoogleカレンダーの変更の毎日のインポート/エクスポートを設定します。エクスポート->インポートを行う場合、Googleカレンダーの変更を上書きしないように注意してください。選択されたシートは同時にインポート/エクスポートを実行しますが、正確にはその時間ではありません。",
+        "notrigger": "現在、このシートを同期していません",
+        "yestrigger": "現在、このシートを自動的に同期しています",
+        "autoimport": "自動インポート/エクスポート",
+        "resetstatus": "ステータスカラーをリセット",
+        "autoimportexport": "自動インポート/エクスポート",
+        "importtext": "インポート",
+        "exporttext": "エクスポート",
+        "selectsyncmethod": "同期順序"
     }
 };
+
 var scriptStrings = {
     en: {
         "MIimport": "Import Calendar to Sheet",
@@ -532,5 +602,45 @@ var scriptStrings = {
         "message6": "שגיאה",
         "message7": "שגיאה בלתי ידועה",
         "message8": "יש לבחור טווח תאריכים תקף, או לבחור 'כל האירועים' "
+    },
+    ja: {
+        "MIimport": "カレンダーをシートにインポート",
+        "MIexport": "シートをカレンダーにエクスポート",
+        "MIlink": "シートを設定",
+        "MIquickstart": 'ヘルプ',
+        "MIaccount": 'マイアカウント',
+        "MItrigger": "自動インポート/エクスポート",
+        "MIimportall": "すべてのシートをインポート",
+        "MIexportall": "すべてのシートをエクスポート",
+        "MIfindupdates": "シート対カレンダーをチェック",
+        "MIquickimport": "クイックインポート",
+        "MIquickexport": "クイックエクスポート",
+        "MIquicksync": "クイックエクスポート/インポート",
+        "error1": "www.sheets2gcal.comで有料アカウントにサインアップして\nGoogleカレンダーからの更新をインポート",
+        "error2": "このGoogleアカウントを使用してwww.sheets2gcal.comで無料サインアップして\n限定されたGoogleカレンダーのインポート/更新を即座に有効にします",
+        "error3": "無料メンバーは1日に最大5000件のイベントをインポートできます。\n無制限のインポートのためにwww.sheets2gcal.comでサブスクリプションに登録するか、最大24時間お待ちください",
+        "error4": 'シートを空にしてGoogleカレンダーにリンクしますか？',
+        "error5": '現在のシートを空にして選択したカレンダーにリンクするにはYESをクリックします。キャンセルするにはNOをクリックします',
+        "error6": 'シートを空にしてカレンダーイベントをインポートしますか？',
+        "error7": '現在のシートを空にして選択したカレンダーをインポートするにはYESをクリックします。キャンセルするにはNOをクリックします',
+        "error8": "このカレンダーは読み取り専用で編集できません。\n続行するにはこのカレンダーの読み取り/書き込み権限を取得してください",
+        "error9": "未登録ユーザーは無制限のイベントを更新/削除できません。\nこのGoogleアカウントを使用してwww.sheets2GCal.comで2クリックでサインアップして、いくつかの制限を無料で削除します！",
+        "error10": '色の列がありません',
+        "error11": 'Sheets2GCalはイベントカラーをサポートしています！\nイベントカラーを設定するために新しいCOLOR列を追加しますか？',
+        "error12": "複数のGoogleアカウント？",
+        "error12b": "このドキュメントにアクセス中に問題が発生しました。\n\nこのブラウザで複数のGoogleアカウントを使用していますか？\nその場合、他のアカウントからログアウトして再試行してください。",
+        "error13": 'シートにアクセスできません。',
+        "error14": 'タイムゾーンが一致しません',
+        "error15": 'Googleカレンダー',
+        "error16": 'とこのスプレッドシート',
+        "error17": 'は異なるタイムゾーンを使用しています\nシートのタイムゾーンを変更するには、「ファイル」メニュー>「スプレッドシートの設定」>「タイムゾーン」で変更できます。\nこれにより問題が発生します：この警告を無視して続行してもよろしいですか？',
+        "message1": "カレンダーのインポート中に重大なエラーが発生しました: ",
+        "message2": "削除する権限がありません",
+        "message3": "見つかりません",
+        "message4": "繰り返しの発生は繰り返せません",
+        "message5": "編集する権限がありません",
+        "message6": "エラー",
+        "message7": "不明なエラー",
+        "message8": "有効な日付範囲を選択するか、「すべてのイベント」を有効にしてください"
     }
 };
