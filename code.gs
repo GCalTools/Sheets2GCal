@@ -71,9 +71,13 @@ function getTranslation(language, key) {
 
 function setLanguage(sheetId, language) {
     const sheet = SpreadsheetApp.openById(sheetId);
-    const headers = ["Delete", "Update", "Title", "Start Date", "End Date", "Start Time", "End Time", "Repeat", "Interval", "Count", "Until", "By Day", "Description", "Location", "Timezone", "Guests", "Event ID", "Link", "Meet", "Color", "Car Name", "Number of People"];
+    const headers = [
+        "Delete", "Update", "Title", "Start Date", "End Date", "Start Time", "End Time",
+        "Repeat", "Interval", "Count", "Until", "By Day", "Description", "Location",
+        "Timezone", "Guests", "Event ID", "Link", "Meet", "Color", "Car Name", "Number of People"
+    ];
     const translatedHeaders = headers.map(header => getTranslation(language, header));
 
-    const range = sheet.getRange('A1:U1'); // Adjust the range according to your header location
+    const range = sheet.getRange('A1:V1'); // Adjust the range according to your header location
     range.setValues([translatedHeaders]);
 }
