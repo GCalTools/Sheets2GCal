@@ -1,6 +1,7 @@
-var languages = ['ja'];
+var languages = ['en', 'ja'];
 
 var colorsNames = {
+    en: ['Default', 'Lavender', 'Sage', 'Grape', 'Flamingo', 'Banana', 'Tangerine', 'Peacock', 'Graphite', 'Blueberry', 'Basil', 'Tomato'],
     ja: ['デフォルト', 'ラベンダー', 'セージ', 'グレープ', 'フラミンゴ', 'バナナ', 'タンジェリン', 'ピーコック', 'グラファイト', 'ブルーベリー', 'バジル', 'トマト']
 };
 
@@ -8,18 +9,81 @@ var oriColorsHtml = ['', '#7986cb', '#33b679', '#8e24aa', '#e67c73', '#f6c026', 
 var colorsHtml = ['', '#b6c9ff', '#4dffb6', '#d536ff', '#ffbaad', '#ffff39', '#ff7a2c', '#05e9ff', '#929292', '#5f7aff', '#11c065', '#ff0000'];
 
 var headerNames = {
+    en: ["Delete", "Update", "Title", "Start Date", "End Date", "Start Time", "End Time", "Frequency", "Interval", "Occurrences", "Until", "By Day", "Description", "Location", "Timezone", "Guests", "Event ID", "Link", "Meet", "Color"],
     ja: ["削除", "更新", "タイトル", "日付", "終了", "開始時刻", "終了時刻", "頻度", "間隔", "カウント", "まで", "配車", "児童名", "場所", "タイムゾーン", "ゲスト", "イベントID", "リンク", "Meet", "カラー"]
 };
 
 var repeatNames = {
+    en: ['', 'daily', 'weekly', 'monthly', 'yearly'],
     ja: ['', '毎日', '毎週', '毎月', '毎年']
 };
 
 var colColName = {
+    en: 'Color',
     ja: 'カラー'
 };
 
 var htmlStrings = {
+    en: {
+        "language": "en",
+        "align": "left",
+        "direction": "ltr",
+        "account": "Account",
+        "calendar": "Calendar",
+        "guestnotifications": "Guest Notifications (optional)",
+        "updatewarning": "When 'Check Sheet vs Calendar' is used to select the events to be updated this detects differences between the Sheet and the Calendar, including edits made to Google Calendar events. Be careful not to overwrite calendar edits, and 'Import Updates' first if necessary.",
+        "sendemail": "Send email for newly created events",
+        "sendemailupdated": "Send email for updated/deleted",
+        "options": "Options",
+        "keeprow": "Keep row data for deleted events",
+        "fetching": "Fetching Data...",
+        "subscribe": "Subscribe",
+        "update": "Update",
+        "notsheets2gcal": "This is not a Sheets2Gcal Pro Sheet\nPlease either Import a calendar or click Link Sheet",
+        "error": "Error",
+        "verify": "Please select 'Delete' or 'Update' for some events, and verify your data is valid",
+        "createdsingle": "event created",
+        "updatedsingle": "event updated",
+        "deletedsingle": "event deleted",
+        "importedsingle": "event imported",
+        "created": "events created",
+        "updated": "events updated",
+        "deleted": "events deleted",
+        "imported": "events imported",
+        "import": "Select a calendar to import to this Sheet",
+        "allevents": "All events",
+        "startdate": "Start Date",
+        "enddate": "End Date",
+        "importcalendar": "Clear Sheet & Import Calendar",
+        "importupdates": "Import Updates & New Events",
+        "upgrade": "Upgrade to any paid subscription to import updates and new events from Google Calendar without clearing the Sheet.",
+        "nocalendars": "No Calendars Found",
+        "importrange": "You cannot import updates for a range of dates",
+        "selectcalendar": "Select a Calendar to Link",
+        "clearlink": "Clear & Link Sheet",
+        "clearlinktext": "This is the best way to set up a blank sheet for new events without importing a calendar. To edit or add to existing events please use 'Import Calendar to Sheet'.",
+        "keepdata": "Keep data and link sheet",
+        "linksheet": "Link Sheet",
+        "linksheettext": "Enter the ID from the Google Calendar Settings. Linking by ID will not change the Sheet, only the Google Calendar linked with this Sheet",
+        "resetlangtext": "Configure this sheet to use your default Google language",
+        "resetlang": "Update Sheet Language",
+        "linked": "Linked!",
+        "wrongaccount": "Please log out from",
+        "accesswith": "to access the document as",
+        "triggertext": "24 hour clock: 0 for midnight, 12 for midday",
+        "deletetext": "Stop all import/export",
+        "startbutton": "Start",
+        "stopbutton": "Stop",
+        "fulltriggertext": "Set up a daily import/export of changes to the Sheet and Google Calendar. If you EXPORT -> IMPORT be careful not to overwrite changes in Google Calendar. Selected Sheets will run import/export at the same time, but not at exactly that time.",
+        "notrigger": "You are not currently syncing this Sheet",
+        "yestrigger": "You are automatically syncing this Sheet",
+        "autoimport": "Import/Export automatically",
+        "resetstatus": "Reset status colors",
+        "autoimportexport": "Automatic Import/Export",
+        "importtext": "Import",
+        "exporttext": "Export",
+        "selectsyncmethod": "Sync Order"
+    },
     ja: {
         "language": "ja",
         "align": "left",

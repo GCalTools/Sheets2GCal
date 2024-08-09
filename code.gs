@@ -1,8 +1,13 @@
 function onOpen() {
     const ui = SpreadsheetApp.getUi();
     ui.createMenu('Language')
+        .addItem('English', 'setEnglish')
         .addItem('Japanese', 'setJapanese')
         .addToUi();
+}
+
+function setEnglish() {
+    setLanguage(SpreadsheetApp.getActiveSpreadsheet().getId(), 'en');
 }
 
 function setJapanese() {
@@ -11,6 +16,28 @@ function setJapanese() {
 
 function getTranslation(language, key) {
     const translations = {
+        en: {
+            "Delete": "Delete",
+            "Update": "Update",
+            "Title": "Title",
+            "Start": "Start Date",
+            "End": "End Date",
+            "Start Time": "Start Time",
+            "End Time": "End Time",
+            "Repeat": "Frequency",
+            "Interval": "Interval",
+            "Count": "Occurrences",
+            "Until": "Until",
+            "By Day": "By Day",
+            "Description": "Description",
+            "Location": "Location",
+            "Timezone": "Timezone",
+            "Guests": "Guests",
+            "Event ID": "Event ID",
+            "Link": "Link",
+            "Meet": "Meet",
+            "Color": "Color"
+        },
         ja: {
             "Delete": "削除",
             "Update": "更新",
@@ -34,7 +61,7 @@ function getTranslation(language, key) {
             "Color": "カラー"
         }
     };
-    
+
     return translations[language][key];
 }
 
