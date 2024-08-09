@@ -9,8 +9,8 @@ var oriColorsHtml = ['', '#7986cb', '#33b679', '#8e24aa', '#e67c73', '#f6c026', 
 var colorsHtml = ['', '#b6c9ff', '#4dffb6', '#d536ff', '#ffbaad', '#ffff39', '#ff7a2c', '#05e9ff', '#929292', '#5f7aff', '#11c065', '#ff0000'];
 
 var headerNames = {
-    en: ["Delete", "Update", "Title", "Start Date", "End Date", "Start Time", "End Time", "Frequency", "Interval", "Occurrences", "Until", "By Day", "Description", "Location", "Timezone", "Guests", "Event ID", "Link", "Meet", "Color"],
-    ja: ["削除", "更新", "タイトル", "日付", "終了", "開始時刻", "終了時刻", "頻度", "間隔", "カウント", "まで", "配車", "児童名", "場所", "タイムゾーン", "ゲスト", "イベントID", "リンク", "Meet", "カラー"]
+    en: ["Delete", "Update", "Title", "Start Date", "End Date", "Start Time", "End Time", "Frequency", "Interval", "Occurrences", "Until", "By Day", "Description", "Location", "Timezone", "Guests", "Event ID", "Link", "Meet", "Color", "Car Name", "Number of People"],
+    ja: ["削除", "更新", "タイトル", "日付", "終了日", "開始時刻", "終了時刻", "頻度", "間隔", "回数", "まで", "曜日", "説明", "場所", "タイムゾーン", "ゲスト", "イベントID", "リンク", "Meet", "カラー", "車", "人数"]
 };
 
 var repeatNames = {
@@ -112,7 +112,7 @@ var htmlStrings = {
         "imported": "イベントがインポートされました",
         "import": "このシートにインポートするカレンダーを選択",
         "allevents": "すべてのイベント",
-        "startdate": "開始日",
+        "startdate": "日付",
         "enddate": "終了日",
         "importcalendar": "シートをクリアしてカレンダーをインポート",
         "importupdates": "更新と新しいイベントをインポート",
